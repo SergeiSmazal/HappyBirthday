@@ -471,8 +471,11 @@
     Bloom = function(tree, point, figure, color, alpha, angle, scale, place, speed) {
         this.tree = tree;
         this.point = point;
-        // Restrict colors to pinks/reds
-        this.color = color || 'rgb(' + random(200, 255) + ',' + random(50, 150) + ',' + random(100, 200) + ')';
+        
+        // Refined Luxe palette: Gold, Soft Pink, Pastel Red
+        var palette = ['#FFD1DC', '#E8A5C8', '#D4AF37', '#F4C2C2', '#C08081'];
+        this.color = color || palette[random(0, palette.length - 1)];
+        
         this.alpha = alpha || random(0.3, 1);
         this.angle = angle || random(0, 360);
         this.scale = scale || 0.1;
@@ -498,6 +501,8 @@
 
             ctx.save();
             ctx.fillStyle = s.color;
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
             ctx.globalAlpha = s.alpha;
             ctx.translate(s.point.x, s.point.y);
             ctx.scale(s.scale, s.scale);
