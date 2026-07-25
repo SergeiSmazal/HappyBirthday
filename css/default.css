@@ -13,7 +13,7 @@ a {color:#4a3c31;font-size:16px;}
 #code {
     display: none;
     perspective: 1200px;
-    width: 500px;
+    width: 650px;
     position: relative;
 }
 
@@ -27,7 +27,7 @@ a {color:#4a3c31;font-size:16px;}
 .zh-text {
     display: block;
     font-family: 'Ma Shan Zheng', cursive;
-    font-size: 32px;
+    font-size: 24px;
     color: #8b1e23;
     margin-bottom: 5px;
     transition: all 1s ease;
