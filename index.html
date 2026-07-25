@@ -116,9 +116,10 @@
         var hold = 1;
 
         canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
+            var offset = canvas.offset();
+            // Calculate coordinates relative to canvas internal dimensions
+            var x = (e.pageX - offset.left) * (canvas[0].width / canvas.width());
+            var y = (e.pageY - offset.top) * (canvas[0].height / canvas.height());
             if (seed.hover(x, y)) {
                 hold = 0; 
                 canvas.unbind("click");
@@ -126,9 +127,9 @@
                 canvas.removeClass('hand');
             }
         }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
+            var offset = canvas.offset();
+            var x = (e.pageX - offset.left) * (canvas[0].width / canvas.width());
+            var y = (e.pageY - offset.top) * (canvas[0].height / canvas.height());
             canvas.toggleClass('hand', seed.hover(x, y));
         });
 
