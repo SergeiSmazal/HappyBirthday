@@ -26,117 +26,116 @@
              <div id="wrap">
                 <div id="text">
               <div id="code">
-            <font color="#FF0000">    
-<span class="say">在天愿作比翼鸟，</span><br>
-<span class="say">在地愿为连理枝。</span><br>
-<span class="say">天长地久有时尽，</span><br>
-<span class="say">此恨绵绵无绝期。</span><br><br>
-<span class="say">In heaven, we wish to be birds flying wing to wing,</span><br>
-<span class="say">On earth, we wish to be trees with intertwined branches.</span><br>
-<span class="say">Even if heaven and earth may one day pass away,</span><br>
-<span class="say">Our love and this depth of feeling shall never end.</span><br><br>
-<span class="say"><span class="space"></span> -- "Song of Everlasting Regret" by Bai Juyi --</span><br>
-<span class="say"><h1>Happy Birthday, my Love!</h1></span><br>
-        </font>
-      </div>
-                </div>
-                <div id="clock-box">
-<span class="STYLE1"></span>
-<font color="#33CC00"></font>
-<span class="STYLE1"></span>
+              <span class="say">在天愿作比翼鸟，</span><br>
+              <span class="say">在地愿为连理枝。</span><br>
+              <span class="say">天长地久有时尽，</span><br>
+              <span class="say">此恨绵绵无绝期。</span><br><br>
+              <span class="say">In heaven, we wish to be birds flying wing to wing,</span><br>
+              <span class="say">On earth, we wish to be trees with intertwined branches.</span><br>
+              <span class="say">Even if heaven and earth may one day pass away,</span><br>
+              <span class="say">Our love and this depth of feeling shall never end.</span><br><br>
+              <span class="say"><span class="space"></span> -- "Song of Everlasting Regret" by Bai Juyi --</span><br>
+              <h1>Happy Birthday, my Love!</h1>
               </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-            
-        </div>
-    
-    <script>
-    </script>
+              </div>
+              <div id="clock-box">
+              <span class="STYLE1"></span>
+              <font color="#33CC00"></font>
+              <span class="STYLE1"></span>
+              </div>
+              <canvas id="canvas" width="1100" height="680"></canvas>
+              </div>
 
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-    
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;        }
+              </div>
 
-        var width = canvas.width();
-        var height = canvas.height();        
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
+              <script>
+              </script>
+
+              <script>
+              (function(){
+              var canvas = $('#canvas');
+
+              if (!canvas[0].getContext) {
+              $("#error").show();
+              return false;        }
+
+              var width = canvas.width();
+              var height = canvas.height();        
+              var opts = {
+              seed: {
+              x: width / 2 - 20,
+              color: "rgb(190, 26, 37)",
+              scale: 2
+              },
+              branch: [
+              // Изменили Y-координаты старта с 680 на 650
+              [535, 650, 570, 220, 500, 170, 30, 100, [
+                  [540, 470, 455, 387, 340, 370, 13, 100, [
+                      [450, 405, 434, 400, 394, 365, 2, 40]
+                  ]],
+                  [550, 415, 600, 326, 680, 315, 12, 100, [
+                      [578, 370, 648, 379, 661, 396, 3, 80]
+                  ]],
+                  [539, 251, 537, 218, 534, 187, 3, 40],
+                  [546, 367, 413, 217, 328, 214, 9, 80, [
+                      [427, 256, 383, 223, 371, 175, 2, 40],
+                      [498, 315, 435, 285, 395, 300, 4, 60]
+                  ]],
+                  [546, 327, 608, 222, 678, 191, 6, 100, [
+                      [590, 263, 646, 247, 648, 241, 2, 80]
+                  ]]
+              ]] 
+              ],
+              bloom: {
+              num: 700,
+              width: 1080,
+              height: 620,
+              },
+              footer: {
+              width: 1200,
+              height: 5,
+              speed: 10,
+              }
+              }
 
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+              var tree = new Tree(canvas[0], width, height, opts);
+              var seed = tree.seed;
+              var foot = tree.footer;
+              var hold = 1;
 
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
+              canvas.click(function(e) {
+              var offset = canvas.offset(), x, y;
+              x = e.pageX - offset.left;
+              y = e.pageY - offset.top;
+              if (seed.hover(x, y)) {
+              hold = 0; 
+              canvas.unbind("click");
+              canvas.unbind("mousemove");
+              canvas.removeClass('hand');
+              }
+              }).mousemove(function(e){
+              var offset = canvas.offset(), x, y;
+              x = e.pageX - offset.left;
+              y = e.pageY - offset.top;
+              canvas.toggleClass('hand', seed.hover(x, y));
+              });
 
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
+              var seedAnimate = eval(Jscex.compile("async", function () {
+              seed.draw();
+              while (hold) {
+              $await(Jscex.Async.sleep(10));
+              }
+              while (seed.canScale()) {
+              seed.scale(0.95);
+              $await(Jscex.Async.sleep(10));
+              }
+              while (seed.canMove()) {
+              seed.move(0, 1.5); // Уменьшили скорость/шаг падения
+              foot.draw();
+              $await(Jscex.Async.sleep(10));
+              }
+              }));
 
         var growAnimate = eval(Jscex.compile("async", function () {
             do {
