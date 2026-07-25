@@ -12,20 +12,35 @@ a {color:#4a3c31;font-size:16px;}
 
 #code {
     display: none;
-    font-family: 'Cormorant Garamond', serif;
-    color: #be1a25;
-    font-size: 18px; /* Уменьшили с 24px до 18px */
-    line-height: 1.4; /* Сделали межстрочный интервал аккуратнее */
+    perspective: 1200px;
+    width: 500px;
+    position: relative;
 }
 
-/* Стили для заголовка Happy Birthday внутри кода */
-#code h1 {
+.poem-line {
+    margin-bottom: 25px;
+    transform-style: preserve-3d;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zh-text {
+    display: block;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 32px;
+    color: #8b1e23;
+    margin-bottom: 5px;
+    transition: all 1s ease;
+}
+
+.en-text {
+    display: block;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    margin-top: 15px;
-    margin-bottom: 0;
-    line-height: 1.2;
-    font-weight: 600;
+    font-size: 16px;
+    font-style: italic;
+    color: #665544;
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
 #clock-box {position:absolute;left:60px;top:550px;font-size:20px;display:none;font-family: 'Montserrat', sans-serif; font-weight: 300; color: #666;}
@@ -35,11 +50,56 @@ a {color:#4a3c31;font-size:16px;}
 #canvas{margin:0 auto;width:1100px;height:680px;}
 #error{margin:0 auto;text-align:center;margin-top:60px;display:none;}
 .hand{cursor:pointer;}
-.say{margin-left:5px;}
-.space{margin-right:150px;}
-.cursor {
-    animation: blink 1s step-end infinite;
+
+.footer-info {
+    margin-top: 30px;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
-@keyframes blink {
-    50% { opacity: 0; }
+
+.author {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #8b1e23;
+}
+
+#code h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #8b1e23;
+}
+
+.red-seal {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #8b1e23;
+    color: #8b1e23;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-5deg) scale(2);
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ink-wash {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 30, 35, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
 }
