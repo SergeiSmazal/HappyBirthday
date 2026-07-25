@@ -1,3 +1,3 @@
 # happybirthday
-帮基友做的，祝福她女朋友生日快乐
+Made for a friend, wishing his girlfriend a happy birthday
 https://shibobo.github.io/happybirthday/
