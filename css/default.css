@@ -35,6 +35,12 @@ a {color:#4a3c31;font-size:16px;}
 #canvas{margin:0 auto;width:1100px;height:680px;}
 #error{margin:0 auto;text-align:center;margin-top:60px;display:none;}
 .hand{cursor:pointer;}
+.chinese-text {
+    font-size: 24px;
+    margin-left: 5px;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
 .say{margin-left:5px;}
 .space{margin-right:150px;}
 .cursor {
