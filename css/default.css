@@ -27,7 +27,7 @@ a {color:#4a3c31;font-size:16px;}
 .zh-text {
     display: block;
     font-family: 'Ma Shan Zheng', cursive;
-    font-size: 24px;
+    font-size: 32px;
     color: #8b1e23;
     margin-bottom: 5px;
     transition: all 1s ease;
@@ -36,7 +36,7 @@ a {color:#4a3c31;font-size:16px;}
 .en-text {
     display: block;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
+    font-size: 20px;
     font-style: italic;
     color: #665544;
     opacity: 0;
